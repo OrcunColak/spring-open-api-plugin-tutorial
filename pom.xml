@@ -42,10 +42,13 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
+                            <!-- Where the input spec is -->
                             <inputSpec>
                                 ${project.basedir}/src/main/resources/api/petstore.yaml
                             </inputSpec>
+                            <!-- There are tons of generators -->
                             <generatorName>spring</generatorName>
+                            <!-- The package for our output classes -->
                             <apiPackage>com.example.petstore.api</apiPackage>
                             <modelPackage>com.example.petstore.model</modelPackage>
                             <invokerPackage>com.example.petstore</invokerPackage>
@@ -54,6 +57,8 @@
                                 <typeMapping>DateTime=Instant</typeMapping>
                                 <typeMapping>Date=Date</typeMapping>
                             </typeMappings>
+
+                            <!-- map of generator-specific properties -->
                             <configOptions>
                                 <!--should add jackson nullable dependency if true-->
                                 <openApiNullable>false</openApiNullable>
